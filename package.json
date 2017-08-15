@@ -1,0 +1,43 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "description": "nodejs server",
+  "main": "index.js",
+  "author": "Bruno Fonseca <brunomacf@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_PATH=./:./src NODE_ENV=production babel-node index.js",
+    "dev": "NODE_PATH=./:./src NODE_ENV=development nodemon --watch ./src --watch ./config --exec babel-node index.js --inspect",
+    "test": "NODE_PATH=./:./src NODE_ENV=test mocha --reporter list --timeout 30000 --watch --compilers js:babel-core/register --require babel-polyfill --recursive --opts .test.js ./src",
+    "doc": "jsdoc --configure .jsdoc.json --verbose"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "chai": "^4.1.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^4.3.0",
+    "jsdoc": "^3.5.3",
+    "jsdoc-template": "https://github.com/braintree/jsdoc-template.git",
+    "mocha": "^3.4.2",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-autobind-class-methods": "^5.0.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "body-parser": "^1.17.2",
+    "common-config": "https://github.com/nosebit/common-config.git",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "lodash": "^4.17.4",
+    "method-override": "^2.3.9",
+    "mkdirp": "^0.5.1",
+    "mongodb": "^2.2.30",
+    "winston": "^2.3.1",
+    "winston-daily-rotate-file": "^1.4.6"
+  }
+}
